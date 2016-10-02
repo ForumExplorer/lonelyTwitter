@@ -28,7 +28,7 @@ public class LonelyTwitterActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+		setContentView(R.layout.edit_habit);
 
 		bodyText = (EditText) findViewById(R.id.body);
 		Button saveButton = (Button) findViewById(R.id.save);
@@ -70,7 +70,7 @@ public class LonelyTwitterActivity extends Activity {
 		super.onStart();
 		String[] tweets = loadFromFile();
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-				R.layout.list_item, tweets);
+				R.layout.view_list, tweets);
 		oldTweetsList.setAdapter(adapter);
 	}
 

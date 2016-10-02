@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/myHabitsTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="My habits" />
+
+    <ListView
+        android:id="@+id/Myhabits"
+        android:layout_width="fill_parent"
+        android:layout_height="263dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical"
+        android:choiceMode="singleChoice">
+
+    </ListView>
+    
+    <EditText
+        android:id="@+id/body"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="horizontal" />
+
+</LinearLayout>

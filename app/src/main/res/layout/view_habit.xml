@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/Habit_name"
+        android:layout_weight="0.06" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/Description_text"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.63" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Completions"
+        android:id="@+id/Completions_text"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.06" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="178dp"
+        android:text="New Text"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.18" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Habit"
+        android:id="@+id/delete_Habit"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.06" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clear Completions"
+        android:id="@+id/clear_Completions"
+        android:layout_weight="0.06" />
+</LinearLayout>

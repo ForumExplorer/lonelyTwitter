@@ -4,6 +4,12 @@ import java.util.Date;
 
 /**
  * Created by watts1 on 9/15/16.
+ * @use Tweetable
+ * Tweet is a class that has a string, which consists of the typed words recorded
+ * and a date, which is the date that the tweet was created on.
+ * It can be important or normal
+ * @use NormalTweet
+ * @use ImportantTweet
  */
 public abstract class Tweet implements Tweetable {
     private String message;

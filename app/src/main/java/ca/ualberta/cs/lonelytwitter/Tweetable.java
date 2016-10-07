@@ -4,7 +4,9 @@ package ca.ualberta.cs.lonelytwitter;
 import java.util.Date;
 
 /**
- * Created by watts1 on 9/15/16.
+ * Created by mmooney from watts work
+ * This is an interface for the Tweet class
+ * @use Tweet
  */
 public interface Tweetable {
     public String getMessage();

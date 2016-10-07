@@ -1,7 +1,9 @@
 package ca.ualberta.cs.lonelytwitter;
 
 /**
- * Created by watts1 on 9/15/16.
+ * Created by mmooney from watts work
+ * Just tells us if a Tweet is important or not
+ * @use Tweet
  */
 public class ImportantTweet extends Tweet{
 

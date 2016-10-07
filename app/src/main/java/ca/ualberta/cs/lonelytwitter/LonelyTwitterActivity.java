@@ -1,3 +1,10 @@
+/*
+Copyright (C) 2016 Team 20 CMPUT301, University of Alberta - All rights reserved.
+You may use, copy or distribute this code under tyerms and conditions of University of Alberta
+and Code of Student Behavior
+Please contacty abc@abc,ca for more details or questions.
+ */
+
 package ca.ualberta.cs.lonelytwitter;
 
 import java.io.BufferedReader;
@@ -12,7 +19,6 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -24,15 +30,23 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 public class LonelyTwitterActivity extends Activity {
+/*
+This is the name of the file that is save in your virtual device.
+You can access it through Android Device Monitor by selecting your app,
+then data -> data -> file.sav
+Displays, collects, and retrieves Tweets.
 
+ */
 	private static final String FILENAME = "file.sav";
 	private EditText bodyText;
 	private ListView oldTweetsList;
 	private ArrayList<Tweet> tweetList = new ArrayList<Tweet>();
-	private ArrayAdapter<Tweet> adapter;
+	private ArrayAdapter<Tweet> tweetAdapter;
 	
-	/** Called when the activity is first created. */
 	@Override
+	/*
+	Creates the buttons and collects the text that is passed to a tweet.
+	 */
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
@@ -51,7 +65,7 @@ public class LonelyTwitterActivity extends Activity {
 				Tweet newTweet = new NormalTweet(text);
 				newTweet.getMessage();
 				tweetList.add(newTweet);
-				adapter.notifyDataSetChanged();
+				tweetAdapter.notifyDataSetChanged();
 				saveInFile();
 
 			}
@@ -60,22 +74,28 @@ public class LonelyTwitterActivity extends Activity {
 			public void onClick(View v){
 				setResult(RESULT_OK);
 				tweetList.clear();
-				adapter.notifyDataSetChanged();
+				tweetAdapter.notifyDataSetChanged();
 				clearInFile();
 			}
 		});
 	}
 
 	@Override
+	//just loads the saved file when the app starts.
 	protected void onStart() {
 		// TODO Auto-generated method stub
 		super.onStart();
 		loadFromFile();
-		adapter = new ArrayAdapter<Tweet>(this,
+		tweetAdapter = new ArrayAdapter<Tweet>(this,
 				R.layout.list_item, tweetList);
-		oldTweetsList.setAdapter(adapter);
+		oldTweetsList.setAdapter(tweetAdapter);
 	}
-
+/*
+This method loads the json file and generates the tweets from its contents.
+*@exception FileNotFoundException
+* @throws RuntimeException
+*
+ */
 	private void loadFromFile() {
 		ArrayList<String> tweets = new ArrayList<String>();
 		try {
@@ -94,7 +114,12 @@ public class LonelyTwitterActivity extends Activity {
 			throw new RuntimeException();
 		}
 	}
-	
+	/**
+	 * Saves the tweetList to the file.sav.
+	 * @Catch FileNotFoundException
+	 * @Catch IOException
+	 * @throws RuntimeException
+	 */
 	private void saveInFile() {
 		try {
 
@@ -111,6 +136,9 @@ public class LonelyTwitterActivity extends Activity {
 			throw new RuntimeException();
 		}
 	}
+	/*
+	Rewrites the save file with nothing in order to clear it.
+	 */
 	private void clearInFile(){
 		try{
 			FileOutputStream fos = openFileOutput(FILENAME,0);
